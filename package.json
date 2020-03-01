@@ -1,0 +1,8 @@
+    {
+    "name": "liri-node-app",
+    "description": "liri is a command line node app that takes in parameters and gives back data using axios to access spotify, and ombd APIs.",
+    "authors": "Sauda Kabir",
+    "version": "1.0.0",
+    "main": "liri.js",
+    "dependencies": {}
+}
