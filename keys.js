@@ -10,3 +10,6 @@ exports.omdb ={
 
 };
 
+exports.bandsInTown ={
+    id: process.env.bandsInTown_id,
+}

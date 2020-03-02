@@ -21,6 +21,21 @@ var fs = require("fs");
 
 // Initialize the spotify API client using our client id and secret
 var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify({
+  id: keys.spotify.id,
+  secret: keys.spotify.secret,
+})
+
+var action = process.argv[2];
+var value = process.argv[3];
+
+switch(action){
+  case "concert-this":
+    getMyBands(value)
+    break;
+    case"spotify-this-song":
+
+}
 
 // FUNCTIONS
 // =====================================
@@ -54,11 +69,30 @@ var getMeSpotify = function(songName) {
     songName = "What's my age again";
   }
 
+  function mySpotify(userInput){
+    var song = userInput;
+    if(!song){
+      song = "the Sign by Ace of Base"
+    }
+     spotify.search({type: 'track', query: song}, function(err, data){
+       if(err){
+         return console.log('Error occured:' + err);
+       }
+
+       console.log("\n---------\Song Name:" + data.tracks.items[0].name);
+       console("Artist(s) Name:" + data.tracks.items[0].artists[0].name);
+       console("Album Name:" + data.tracks.items[0].album.name);
+       
+       
+     });
+
+     module.exports = mySpotify;
+  }
   /** TODO: Write the code to exceute the command below. 
    * 
    *      node liri.js spotify-this-song '<song name here>'
    * 
-
+   
     * This will show the following information about the song in your terminal/bash window
 
         1. Artist(s)
@@ -94,7 +128,7 @@ var getMyBands = function(artist) {
    * 
   */
  //FIXME: 
-  var queryURL = "CREATE-THE-URL-HERE";
+  var queryURL = "https://unpkg.com/axios/dist/axios.min.js";
 
   axios.get(queryURL).then(
 
@@ -117,6 +151,12 @@ var getMyBands = function(artist) {
   );
 };
 
+function getMeMovie(movieName)
+axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=5fd6789e"+ movieName)
+     .then(function(data){
+       var results = data
+       
+     });
   /** TODO: Write the code to exceute the command below. 
    * 
    *        node liri.js movie-this '<movie name here>'
