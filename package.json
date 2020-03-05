@@ -16,21 +16,12 @@
         "node-spotify-api": "^1.1.1"
     },
     "repository": {
-        
         "type": "git",
         "url": "git+https://github.com/Sauda281/Liri-Bot"
-        
     },
-     "keywords": [
-         "liri",
-         "nodejs",
-         "bot"
-     ],
-     "devDependencies": {
-         "dotenv": "8.2.0",
-         "inquirer": "7.0.5",
-         "node-spotify-api": "1.1.1",
-         "request": "2.88.2",
-         "spotify-web-api-node": "4.0.0"
-     }
+    "keywords": [
+        "liri",
+        "nodejs",
+        "bot"
+    ]
 }
